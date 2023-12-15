@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "Analyseur Le lab d'Eric",
+  "version": "1.0",
+  "description": "Extension pour analyser les balises titres d'une page web.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon.png"
+    }
+  },
+  "icons": {
+    "48": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}
